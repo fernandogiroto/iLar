@@ -50,7 +50,7 @@ As [John Gruber] writes on the [Markdown site][df1]
 Dillinger uses a number of open source projects to work properly:
 
 - [André Pinheiro] - Developer Backend 
-- [Sara ] - awesome web-based text editor
+- [Sara de Sousa] - awesome web-based text editor
 - [Ana Tavares] - Gestora e Marketing
 - [Fernando Giroto] - Designer Frontend
 
