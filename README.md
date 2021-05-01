@@ -33,10 +33,10 @@ O aplicativo fora criado utilizando o kit de desenvolvimento de interface de usu
 
 Nossa equipa conta com quatro profissionais em diferentes áreas que faz do ilar capaz de suprir qualquer demanda e atualizações futuras:
 
-- [André Pinheiro] - Developer Backend 
-- [Sara de Sousa] - awesome web-based text editor
-- [Ana Tavares] - Gestora e Marketing
-- [Fernando Giroto] - Designer Frontend
+- [André Pinheiro] - Função A
+- [Sara de Sousa] - Função B
+- [Ana Tavares] - Função C
+- [Fernando Giroto] - Função D
 
 
 ## Installation
