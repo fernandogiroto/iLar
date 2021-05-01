@@ -58,9 +58,7 @@ NODE_ENV=production node app
 ```
 
 ## Librarys
-
-Dillinger is currently extended with the following plugins.
-Instructions on how to use them in your own application are linked below.
+Lista de bibliotecas usadas no ilar e as documentações para instalação.
 
 | Plugin | README |
 | ------ | ------ |
@@ -73,7 +71,7 @@ Instructions on how to use them in your own application are linked below.
 
 ## Database Install
 
-Dillinger is very easy to install and deploy in a Docker container.
+Para utilizar a base de dados do ilar, basta seguir o passo a passo abaixo.
 
 By default, the Docker will expose port 8080, so change this within the
 Dockerfile if necessary. When ready, simply use the Dockerfile to
