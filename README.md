@@ -28,9 +28,7 @@ Por outro lado, a equipa técnica poderá beneficiar do controlo sobre a lista d
 - Drag and drop markdown and HTML files into Dillinger
 - Export documents as Markdown, HTML and PDF
 
-Markdown is a lightweight markup language based on the formatting conventions
-that people naturally use in email.
-As [John Gruber] writes on the [Markdown site][df1]
+O aplicativo fora criado utilizando o kit de desenvolvimento de interface de usuário Flutter e o Laravel no backend. Duas ferramentas poderosas para gestão e design de aplicações android e ios.
 
 > The overriding design goal for Markdown's
 > formatting syntax is to make it as readable
