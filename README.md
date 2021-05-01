@@ -39,9 +39,6 @@ Nossa equipa conta com quatro profissionais em diferentes áreas que faz do ilar
 - [Fernando Giroto] - Designer Frontend
 
 
-And of course Dillinger itself is open source with a [public repository][dill]
- on GitHub.
-
 ## Installation
 
 Dillinger requires [Node.js](https://nodejs.org/) v10+ to run.
