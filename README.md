@@ -1,4 +1,4 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400"></a></p>
+<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://www.opencodez.com/wp-content/uploads/2020/01/Google-flutter-logo.png" width="400"></a></p>
 
 <p align="center">
 <a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
@@ -7,15 +7,13 @@
 <a href="https://packagist.org/packages/laravel/framework"><img src="https://poser.pugx.org/laravel/framework/license.svg" alt="License"></a>
 </p>
 
-## About Laravel
-# iLar
+## iLar
 O objetivo do ILar é facilitar a gestão dos espaços de residências para idosos contribuindo para uma melhoria dos serviços de gestão de trabalhadores e utentes. A app ILar permite o registo de informação de forma mais rápida e eficaz aumentando o tempo e disponibilidade dos trabalhadores para um contacto mais próximo com os idosos.
 
 Os gestores do ILar poderão ter acesso aos registos obrigatórios por lei de forma automática simplificando a gestão de recursos humanos (assiduidade, horários, turnos e trocas de horário); controlo das visitas de familiares (marcações, dúvidas, partilha de informação); controlo de equipamentos (limpezas, registos de cozinha obrigatórios por lei) e acompanhamento próximo das questões relacionadas com os utentes (medicação, higiene, ocorrências, quedas…).
 
 Por outro lado, a equipa técnica poderá beneficiar do controlo sobre a lista de espera de novos utentes, bem como gerir o plano de atividades mensal e de stock de medicamentos e produtos de higiene. Tendo ainda em conta a política de proteção de dados sobre os registos médicos e clínicos a app garante também que a equipa médica possa realizar os seus registos, colocar datas de consultas, gerir exames abrindo um processo individual para cada utente. Existe ainda a possibilidade de deixar recados à equipa a qualquer hora.
 
-![](https://www.opencodez.com/wp-content/uploads/2020/01/Google-flutter-logo.png)
 
 Flutter é um kit de desenvolvimento de interface de usuário (UI toolkit), de código aberto, criado pelo Google, que possibilita a criação de aplicativos compilados nativamente. Atualmente pode compilar para Android, iOS, Windows, Mac, Linux, Google Fuchsia[1] e Web.
 
