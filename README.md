@@ -15,7 +15,6 @@ Os gestores do ILar poderão ter acesso aos registos obrigatórios por lei de fo
 Por outro lado, a equipa técnica poderá beneficiar do controlo sobre a lista de espera de novos utentes, bem como gerir o plano de atividades mensal e de stock de medicamentos e produtos de higiene. Tendo ainda em conta a política de proteção de dados sobre os registos médicos e clínicos a app garante também que a equipa médica possa realizar os seus registos, colocar datas de consultas, gerir exames abrindo um processo individual para cada utente. Existe ainda a possibilidade de deixar recados à equipa a qualquer hora.
 
 
-Flutter é um kit de desenvolvimento de interface de usuário (UI toolkit), de código aberto, criado pelo Google, que possibilita a criação de aplicativos compilados nativamente. Atualmente pode compilar para Android, iOS, Windows, Mac, Linux, Google Fuchsia[1] e Web.
 
 - Type some Markdown on the left
 - See HTML in the right
@@ -41,9 +40,8 @@ As [John Gruber] writes on the [Markdown site][df1]
 > looking like it's been marked up with tags
 > or formatting instructions.
 
-This text you see here is *actually- written in Markdown! To get a feel
-for Markdown's syntax, type some text into the left window and
-watch the results in the right.
+
+<strong>Flutter</strong> é um kit de desenvolvimento de interface de usuário (UI toolkit), de código aberto, criado pelo Google, que possibilita a criação de aplicativos compilados nativamente. Atualmente pode compilar para Android, iOS, Windows, Mac, Linux, Google Fuchsia e Web.
 
 ## Team
 
