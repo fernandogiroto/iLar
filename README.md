@@ -15,11 +15,6 @@ Os gestores do ILar poderão ter acesso aos registos obrigatórios por lei de fo
 Por outro lado, a equipa técnica poderá beneficiar do controlo sobre a lista de espera de novos utentes, bem como gerir o plano de atividades mensal e de stock de medicamentos e produtos de higiene. Tendo ainda em conta a política de proteção de dados sobre os registos médicos e clínicos a app garante também que a equipa médica possa realizar os seus registos, colocar datas de consultas, gerir exames abrindo um processo individual para cada utente. Existe ainda a possibilidade de deixar recados à equipa a qualquer hora.
 
 
-
-- Type some Markdown on the left
-- See HTML in the right
-- ✨Magic ✨
-
 ## Features
 
 - Import a HTML file and watch it magically convert to Markdown
@@ -45,7 +40,7 @@ O aplicativo fora criado utilizando o kit de desenvolvimento de interface de usu
 
 ## Team
 
-Dillinger uses a number of open source projects to work properly:
+Nossa equipa conta com quatro profissionais em diferentes áreas que faz do ilar capaz de suprir qualquer demanda e atualizações futuras:
 
 - [André Pinheiro] - Developer Backend 
 - [Sara de Sousa] - awesome web-based text editor
