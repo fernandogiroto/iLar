@@ -16,8 +16,12 @@ class UserController extends Controller
     }
 
     public function index() {
-        $users = $this->userService->getAll();
-        return response()->json($users);
+        try {
+            $users = $this->userService->getAll();
+            return response()->json( [ 'success' => true, 'users' => $users ] );
+        } catch (Exception $e) {
+            return response()->json( [ 'success' => false, 'error' => $e->getMessage()] );
+        }
     }
 
     public function store(StoreUserRequest $request) {

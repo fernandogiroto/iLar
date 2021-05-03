@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Interfaces;
+namespace App\Interfaces\Lar;
 
 use App\Http\Requests\Lar\StoreLarRequest;
 

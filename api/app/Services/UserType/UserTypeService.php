@@ -17,23 +17,23 @@ class UserTypeService implements iUserTypeService
         return $user_types;
     }
 
-    function show(User $user) {
-        return $user;
+    function show(UserType $user_type) {
+        return $user_type;
     }
 
-    function store(StoreUserRequest $request) {
-        $user = User::create($request->all());
-        return $user;
+    function store(UserTypeRequest $request) {
+        $user_type = UserType::create($request->all());
+        return $user_type;
     }
 
-    function update(StoreUserRequest $request, User $user) {
-        $user = $user->update($request->all());
-        return $user;
+    function update(UserTypeRequest $request, UserType $user_type) {
+        $user_type->update($request->all());
+        return $$user_type;
         
     }
 
-    function delete(User $user) {
-        $user->delete();
+    function delete( UserType $user_type) {
+        $user_type->delete();
         return true;
     }
 }

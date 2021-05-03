@@ -22,12 +22,8 @@ Route::middleware('auth:api')->get('/user', function (Request $request) {
 Route::apiResource('users','UserController');
 Route::apiResource('usertypes','UserTypeController');
 Route::apiResource('lares','LarController');
-Route::apiResource('clinics','ClinicController')->middleware('jwt');
-Route::apiResource('doctors','DoctorController');
-Route::apiResource('specialities','SpecialityController');
-
-
-//Route::put('lares/{lar}', 'LarController@update');
+Route::apiResource('actions','ActionController');
+Route::apiResource('actionregistration','ActionRegistrationController');
 
 Route::group([
 

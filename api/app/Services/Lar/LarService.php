@@ -4,7 +4,7 @@
 namespace App\Services\Lar;
 
 use App\Http\Requests\Lar\StoreLarRequest;
-use App\Interfaces\iLarService;
+use App\Interfaces\Lar\iLarService;
 use App\Models\Lar;
 
 class LarService implements iLarService

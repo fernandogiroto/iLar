@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\UserType;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Illuminate\Notifications\Notifiable;
@@ -56,5 +57,13 @@ class User extends Authenticatable  implements JWTSubject
     public function getJWTCustomClaims()
     {
         return [];
+    }
+
+    /**
+     * Get the type of user.
+     */
+    public function user_type()
+    {
+        return $this->belongsToMany(UserType::class, 'user_has_type');
     }
 }

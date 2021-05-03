@@ -9,6 +9,7 @@ use App\User;
 use App\Models\Action;
 use Illuminate\Support\Facades\Mail;
 use App\Models\ActionRegistration;
+use App\Models\UserType;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -21,7 +22,13 @@ use App\Models\ActionRegistration;
 */
 
 Route::get('/', function () {
-    $user = User::create(['name'=> 'asd', 'email' => 'andre@mail.com', 'password' => bcrypt(123)]);
+   $user = User::findOrFail(1);
+
+   $user_type = UserType::find(3);
+
+   //$user->user_type()->save($user_type);
+
+dd($user->load('user_type'));
 
     //$clinic->specialities()->save($speciality);
 

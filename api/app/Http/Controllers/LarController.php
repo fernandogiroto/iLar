@@ -12,21 +12,25 @@ use Exception;
 class LarController extends Controller
 {
 
-    public function __construct(
-        LarService $larService
-    ) {
-     
+    public function __construct(LarService $larService) {
         $this->larService = $larService;
     }
+
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
-        $lares = $this->larService->getAll();
-        return response()->json($lares);
+    {  
+        try {
+            $lares = $this->larService->getAll();
+            return response()->json(['lares' => $lares, 'success' => true]);
+        } catch (Exception $e) {
+            return response()->json(
+                [ 'success' => false, 'error' => $e->getMessage()]
+            );
+        }
     }
 
      /**
@@ -37,7 +41,6 @@ class LarController extends Controller
      */
     public function store(StoreLarRequest $request)
     {
-        
         try {
             $lar = $this->larService->store($request);
             return response()->json([ 'lar' => $lar, 'success' => true]);
