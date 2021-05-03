@@ -7,79 +7,46 @@ use Illuminate\Http\Request;
 
 class UserTypeController extends Controller
 {
-    /**
-     * Display a listing of the resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function index()
-    {
-        //
+    public function __construct(
+        UserTypeService $userService
+    ) {
+        $this->userService = $userService;
     }
 
-    /**
-     * Show the form for creating a new resource.
-     *
-     * @return \Illuminate\Http\Response
-     */
-    public function create()
-    {
-        //
+    public function index() {
+        $users = $this->userService->getAll();
+        return response()->json($users);
     }
 
-    /**
-     * Store a newly created resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @return \Illuminate\Http\Response
-     */
-    public function store(Request $request)
-    {
-        //
+    public function store(StoreUserRequest $request) {
+        try {
+            $user = $this->userService->store($request);
+            return response()->json([ 'user' => $user, 'success' => true]);
+        } catch (Exception $e) {
+            return response()->json( [ 'success' => false, 'error' => $e->getMessage()] );
+        }
+
     }
 
-    /**
-     * Display the specified resource.
-     *
-     * @param  \App\UserType  $userType
-     * @return \Illuminate\Http\Response
-     */
-    public function show(UserType $userType)
-    {
-        //
+    public function show(User $user) {
+        return response()->json([ 'user' => $user]);
     }
 
-    /**
-     * Show the form for editing the specified resource.
-     *
-     * @param  \App\UserType  $userType
-     * @return \Illuminate\Http\Response
-     */
-    public function edit(UserType $userType)
-    {
-        //
+    public function update(StoreUserRequest $request, User $user) {
+        try {
+            $user = $this->userService->update($request, $user);
+            return response()->json([ 'user' => $user, 'success' => true]);
+        } catch (Exception $e) {
+            return response()->json( [ 'success' => false, 'error' => $e->getMessage()] );
+        }
     }
 
-    /**
-     * Update the specified resource in storage.
-     *
-     * @param  \Illuminate\Http\Request  $request
-     * @param  \App\UserType  $userType
-     * @return \Illuminate\Http\Response
-     */
-    public function update(Request $request, UserType $userType)
-    {
-        //
-    }
-
-    /**
-     * Remove the specified resource from storage.
-     *
-     * @param  \App\UserType  $userType
-     * @return \Illuminate\Http\Response
-     */
-    public function destroy(UserType $userType)
-    {
-        //
+    public function destroy(User $user){
+        try {
+            $this->userService->delete($user);
+            return response()->json(['success' => true]);
+        } catch (Exception $e) {
+            return response()->json( ['success' => false, 'error' => $e->getMessage()] );
+        }
     }
 }

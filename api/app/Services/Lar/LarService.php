@@ -4,10 +4,10 @@
 namespace App\Services\Lar;
 
 use App\Http\Requests\Lar\StoreLarRequest;
-use App\Interfaces\iService;
+use App\Interfaces\iLarService;
 use App\Models\Lar;
 
-class LarService implements iService
+class LarService implements iLarService
 {
     function show(int $id){
 

@@ -74,9 +74,7 @@ class LarController extends Controller
             $lar = $this->larService->update($request, $lar_id);
             return response()->json([ 'lar' => $lar, 'success' => true]);
         } catch (Exception $e) {
-            return response()->json(
-                [ 'success' => false, 'error' => $e->getMessage()]
-            );
+            return response()->json( [ 'success' => false, 'error' => $e->getMessage()] );
         }
     }
 
@@ -92,9 +90,7 @@ class LarController extends Controller
             $this->larService->delete($lar_id);
             return response()->json(['success' => true]);
         } catch (Exception $e) {
-            return response()->json(
-                [ 'success' => false, 'error' => $e->getMessage()]
-            );
+            return response()->json( [ 'success' => false, 'error' => $e->getMessage()] );
         }
     }
 }

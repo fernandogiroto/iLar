@@ -1,20 +1,20 @@
 <?php
 
 
-namespace App\Services\User;
+namespace App\Services\UserType;
 
-use App\Interfaces\User\iUserService;
-use App\User;
-use App\Http\Requests\User\StoreUserRequest;
+use App\Interfaces\UserType\iUserTypeService;
+use App\Models\UserType;
+use App\Http\Requests\UserType\UserTypeRequest;
 
 
-class UserService implements iUserService
+class UserTypeService implements iUserTypeService
 {
 
     function getAll()
     {
-        $users = User::all();
-        return $users;
+        $user_types = UserType::all();
+        return $user_types;
     }
 
     function show(User $user) {
