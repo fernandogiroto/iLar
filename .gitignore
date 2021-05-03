@@ -86,3 +86,4 @@ lint/tmp/
 
 .vsocde
 .vsocde/settings.json
+api/vendor/
