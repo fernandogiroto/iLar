@@ -13,7 +13,7 @@ class UserService implements iUserService
 
     function getAll()
     {
-        $users = User::all();
+        $users = User::with('user_type')->get();
         return $users;
     }
 
@@ -23,7 +23,7 @@ class UserService implements iUserService
 
     function store(StoreUserRequest $request) {
         $user = User::create($request->all());
-        return $user;
+        return $user->with('user_type');
     }
 
     function update(StoreUserRequest $request, User $user) {
