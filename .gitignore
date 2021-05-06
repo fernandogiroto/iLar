@@ -87,3 +87,16 @@ lint/tmp/
 .vsocde
 .vsocde/settings.json
 api/vendor/
+.vscode/launch.json
+api/.env
+api/vendor/autoload.php
+api/vendor/composer/autoload_classmap.php
+api/vendor/composer/autoload_files.php
+api/vendor/composer/autoload_namespaces.php
+api/vendor/composer/autoload_psr4.php
+api/vendor/composer/autoload_real.php
+api/vendor/composer/autoload_static.php
+api/vendor/composer/ClassLoader.php
+api/vendor/composer/LICENSE
+api/vendor/composer/platform_check.php
+api/vendor/autoload.php

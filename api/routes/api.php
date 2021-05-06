@@ -23,7 +23,7 @@ Route::apiResource('users','UserController');
 Route::apiResource('usertypes','UserTypeController');
 Route::apiResource('lares','LarController');
 Route::apiResource('actions','ActionController');
-Route::apiResource('actionregistration','ActionRegistrationController');
+Route::apiResource('registrations','ActionRegistrationController');
 
 Route::group([
 

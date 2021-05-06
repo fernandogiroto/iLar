@@ -14,7 +14,7 @@ class ActionService implements iActionService
     
     function getAll()
     {
-        $actions = Action::all();
+        $actions = Action::with('authors', 'receptors', 'registrations')->get();
         return $actions;
     }
     
