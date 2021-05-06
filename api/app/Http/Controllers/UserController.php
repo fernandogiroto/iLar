@@ -2,16 +2,14 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\User\StoreUserRequest;
-use App\Services\User\UserService;
+use App\Http\Requests\StoreUserRequest;
+use App\Services\UserService;
 use App\User;
 use Exception;
 
 class UserController extends Controller
 {
-    public function __construct(
-        UserService $userService
-    ) {
+    public function __construct(UserService $userService) {
         $this->userService = $userService;
     }
 

@@ -5,8 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Models\Lar;
 use App\Models\Doctor;
-use App\Services\Lar\LarService;
-use App\Http\Requests\Lar\StoreLarRequest;
+use App\Services\LarService;
+use App\Http\Requests\StoreLarRequest;
 use Exception;
 
 class LarController extends Controller

@@ -1,10 +1,10 @@
 <?php
 
 
-namespace App\Services\Lar;
+namespace App\Services;
 
-use App\Http\Requests\Lar\StoreLarRequest;
-use App\Interfaces\Lar\iLarService;
+use App\Http\Requests\StoreLarRequest;
+use App\Interfaces\iLarService;
 use App\Models\Lar;
 
 class LarService implements iLarService

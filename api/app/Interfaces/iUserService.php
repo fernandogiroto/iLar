@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Interfaces\User;
+namespace App\Interfaces;
 
 use App\User;
-use App\Http\Requests\User\StoreUserRequest;
+use App\Http\Requests\StoreUserRequest;
 
 interface iUserService
 {

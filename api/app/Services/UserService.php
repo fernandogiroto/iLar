@@ -1,11 +1,11 @@
 <?php
 
 
-namespace App\Services\User;
+namespace App\Services;
 
-use App\Interfaces\User\iUserService;
+use App\Interfaces\iUserService;
 use App\User;
-use App\Http\Requests\User\StoreUserRequest;
+use App\Http\Requests\StoreUserRequest;
 
 
 class UserService implements iUserService

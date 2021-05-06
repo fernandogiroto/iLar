@@ -1,8 +1,8 @@
 <?php
 
-namespace App\Interfaces\Lar;
+namespace App\Interfaces;
 
-use App\Http\Requests\Lar\StoreLarRequest;
+use App\Http\Requests\StoreLarRequest;
 
 interface iLarService
 {
