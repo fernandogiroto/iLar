@@ -50,6 +50,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "ff_navigation_bar",
+      "rootUri": "file:///Users/fernandogiroto/Development/flutter/.pub-cache/hosted/pub.dartlang.org/ff_navigation_bar-0.1.5",
+      "packageUri": "lib/",
+      "languageVersion": "2.1"
+    },
+    {
       "name": "flutter",
       "rootUri": "file:///Users/fernandogiroto/Development/flutter/packages/flutter",
       "packageUri": "lib/",
@@ -80,6 +86,12 @@
       "languageVersion": "2.12"
     },
     {
+      "name": "nested",
+      "rootUri": "file:///Users/fernandogiroto/Development/flutter/.pub-cache/hosted/pub.dartlang.org/nested-1.0.0",
+      "packageUri": "lib/",
+      "languageVersion": "2.12"
+    },
+    {
       "name": "page_transition",
       "rootUri": "file:///Users/fernandogiroto/Development/flutter/.pub-cache/hosted/pub.dartlang.org/page_transition-1.1.7+6",
       "packageUri": "lib/",
@@ -90,6 +102,12 @@
       "rootUri": "file:///Users/fernandogiroto/Development/flutter/.pub-cache/hosted/pub.dartlang.org/path-1.8.0",
       "packageUri": "lib/",
       "languageVersion": "2.12"
+    },
+    {
+      "name": "provider",
+      "rootUri": "file:///Users/fernandogiroto/Development/flutter/.pub-cache/hosted/pub.dartlang.org/provider-4.3.3",
+      "packageUri": "lib/",
+      "languageVersion": "2.7"
     },
     {
       "name": "sky_engine",
@@ -152,7 +170,7 @@
       "languageVersion": "2.1"
     }
   ],
-  "generated": "2021-05-09T13:39:29.366350Z",
+  "generated": "2021-05-09T16:56:20.049993Z",
   "generator": "pub",
   "generatorVersion": "2.12.1"
 }

@@ -2,11 +2,11 @@ import 'package:flutter/material.dart';
 import 'package:app/theme.dart';
 
 class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
-  CustomAppBar({Key key, this.title: 'Ilar', this.counter: 0})
+  CustomAppBar({Key key, this.title: 'Ilar'})
       : preferredSize = Size.fromHeight(kToolbarHeight),
         super(key: key);
   final String title;
-  int counter;
+
 
   @override
   final Size preferredSize; // default is 56.0
@@ -15,7 +15,6 @@ class CustomAppBar extends StatefulWidget implements PreferredSizeWidget {
 }
 
 class _CustomAppBarState extends State<CustomAppBar> {
-  int counter = 0;
 
   @override
   Widget build(BuildContext context) {
