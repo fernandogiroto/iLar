@@ -3,6 +3,7 @@ import 'package:app/commons/collapsing_navigation_drawer.dart';
 import 'package:app/widgets/horizontal_list.dart';
 import 'package:app/models/patient_model.dart';
 import 'package:app/commons/custom_app_bar.dart';
+import 'package:app/commons/custom_bottom_bar.dart';
 
 class PatientsScreen extends StatefulWidget {
   @override
@@ -13,7 +14,7 @@ class _PatientsScreenState extends State<PatientsScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: CustomAppBar(counter: 8),
+      appBar: CustomAppBar(),
       drawer: CollapsingNavigationDrawer(currentSelectedIndex: 1),
       body: Container(
         color: Colors.white,
@@ -40,6 +41,7 @@ class _PatientsScreenState extends State<PatientsScreen> {
           ],
         ),
       ),
+      bottomNavigationBar: CustomBottomBar(),
     );
   }
 }
