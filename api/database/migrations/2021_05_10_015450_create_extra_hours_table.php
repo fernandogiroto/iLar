@@ -15,7 +15,15 @@ class CreateExtraHoursTable extends Migration
     {
         Schema::create('extra_hours', function (Blueprint $table) {
             $table->id();
+            $table->unsignedBigInteger('user_id');
+            $table->unsignedTinyInteger('hours_quantity');
+            $table->date('date');
+            $table->unsignedBigInteger('created_by');
             $table->timestamps();
+
+            $table->foreign('user_id')->references('id')->on('users');
+            $table->foreign('created_by')->references('id')->on('users');
+
         });
     }
 

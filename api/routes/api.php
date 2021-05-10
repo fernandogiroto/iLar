@@ -24,6 +24,7 @@ Route::apiResource('usertypes','UserTypeController');
 Route::apiResource('lares','LarController');
 Route::apiResource('actions','ActionController');
 Route::apiResource('registrations','ActionRegistrationController');
+Route::apiResource('extrahours','ExtraHoursController');
 
 Route::group([
 
