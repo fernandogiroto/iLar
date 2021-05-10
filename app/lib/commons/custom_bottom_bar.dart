@@ -3,14 +3,17 @@ import 'package:ff_navigation_bar/ff_navigation_bar.dart';
 import 'package:app/theme.dart';
 
 class CustomBottomBar extends StatefulWidget {
-  CustomBottomBar({Key key}) : super(key: key);
+  final int index;
+  CustomBottomBar({Key key, @required this.index}) : super(key: key);
 
   @override
-  _CustomBottomBarMenuState createState() => _CustomBottomBarMenuState();
+  _CustomBottomBarMenuState createState() => _CustomBottomBarMenuState(index);
 }
 
 class _CustomBottomBarMenuState extends State<CustomBottomBar> {
-  int selectedIndex = 2;
+  int selectedIndex;
+  _CustomBottomBarMenuState(this.selectedIndex);
+  
   @override
   Widget build(BuildContext context) {
     return FFNavigationBar(
@@ -25,6 +28,12 @@ class _CustomBottomBarMenuState extends State<CustomBottomBar> {
       onSelectTab: (index) {
         setState(() {
           selectedIndex = index;
+          if (selectedIndex == 0)
+            Navigator.pushNamed(context, 'patients');
+          else if (selectedIndex == 1)
+            Navigator.pushNamed(context, 'patients');
+          else if (selectedIndex == 2)
+            Navigator.pushNamed(context, 'homescreen');
         });
       },
       items: [
@@ -45,8 +54,8 @@ class _CustomBottomBarMenuState extends State<CustomBottomBar> {
           label: 'Notas',
         ),
         FFNavigationBarItem(
-          iconData: Icons.settings,
-          label: 'Opções',
+          iconData: Icons.notifications_active,
+          label: 'Alertas',
         ),
       ],
     );
