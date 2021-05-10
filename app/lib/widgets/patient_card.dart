@@ -2,7 +2,11 @@ import 'package:app/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:app/widgets/patient_info.dart';
 
-class DoctorsTile extends StatelessWidget {
+class PatientTile extends StatelessWidget {
+  final String patientImagePath;
+  final String patientName;
+  final int patientIdade;
+  PatientTile({this.patientImagePath, this.patientName, this.patientIdade});
   @override
   Widget build(BuildContext context) {
     return GestureDetector(
@@ -16,12 +20,15 @@ class DoctorsTile extends StatelessWidget {
         padding: EdgeInsets.symmetric(horizontal: 24, vertical: 18),
         child: Row(
           children: <Widget>[
-            ClipRRect(
-              borderRadius: BorderRadius.circular(10.0),
-              child: Image.asset(
-                "assets/img/vovo.jpeg",
-                width: 50,
-                height: 50,
+            Container(
+              width: 55.0,
+              height: 55.0,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                image: DecorationImage(
+                  fit: BoxFit.fill,
+                  image: AssetImage(patientImagePath),
+                ),
               ),
             ),
             SizedBox(
@@ -31,14 +38,14 @@ class DoctorsTile extends StatelessWidget {
               crossAxisAlignment: CrossAxisAlignment.start,
               children: <Widget>[
                 Text(
-                  "Manuel Ribeiro",
+                  patientName,
                   style: TextStyle(color: textWhiteColor, fontSize: 19),
                 ),
                 SizedBox(
                   height: 2,
                 ),
                 Text(
-                  "86 anos | Falta Design",
+                  "$patientIdade anos | Falta Design",
                   style: TextStyle(color: textWhiteColor, fontSize: 15),
                 )
               ],
