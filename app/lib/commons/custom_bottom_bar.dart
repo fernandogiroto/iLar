@@ -13,7 +13,7 @@ class CustomBottomBar extends StatefulWidget {
 class _CustomBottomBarMenuState extends State<CustomBottomBar> {
   int selectedIndex;
   _CustomBottomBarMenuState(this.selectedIndex);
-  
+
   @override
   Widget build(BuildContext context) {
     return FFNavigationBar(
@@ -28,9 +28,7 @@ class _CustomBottomBarMenuState extends State<CustomBottomBar> {
       onSelectTab: (index) {
         setState(() {
           selectedIndex = index;
-          if (selectedIndex == 0)
-            Navigator.pushNamed(context, 'patients');
-          else if (selectedIndex == 1)
+          if (selectedIndex == 1)
             Navigator.pushNamed(context, 'patients');
           else if (selectedIndex == 2)
             Navigator.pushNamed(context, 'homescreen');
