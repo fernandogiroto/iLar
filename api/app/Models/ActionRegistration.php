@@ -17,10 +17,10 @@ class ActionRegistration extends Model
     }
 
     public function authors() {
-        return $this->belongsToMany(User::class, 'action_has_authors');
+        return $this->belongsToMany(User::class, 'action_has_authors')->withTimestamps();
     }
 
     public function receptors() {
-        return $this->belongsToMany(User::class, 'action_has_receptors');
+        return $this->belongsToMany(User::class, 'action_has_receptors')->withTimestamps();
     }
 }

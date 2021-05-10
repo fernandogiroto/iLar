@@ -2,6 +2,7 @@
 
 namespace App;
 
+use App\Models\ActionRegistration;
 use App\Models\UserType;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
@@ -18,7 +19,7 @@ class User extends Authenticatable  implements JWTSubject
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password',
+        'name', 'email', 'password', 'birthdate', 'birthplace'
     ];
 
     /**
@@ -66,4 +67,14 @@ class User extends Authenticatable  implements JWTSubject
     {
         return $this->belongsToMany(UserType::class, 'user_has_type');
     }
+
+    /**
+     * Get the type of user.
+     */
+    public function registrations()
+    {
+        return $this->belongsTo(ActionRegistration::class);
+    }
+
+
 }

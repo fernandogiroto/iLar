@@ -38,7 +38,7 @@ class ActionRegistrationService implements iActionRegistration
         $registration->authors()->sync($authors_ids);
         $registration->receptors()->sync($receptors_ids);
 
-        return $registration->with('action');
+        return $registration->load('action', 'authors', 'receptors');
     }
     
     function update(ActionRegistrationRequest $request, ActionRegistration $actionRegistration) {

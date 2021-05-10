@@ -52,7 +52,11 @@ Route::get('/user/create', function() {
     $user['name'] = $faker->name;
     $user['email'] = $faker->unique()->email;
     $user['password'] = bcrypt('123');
+    $user['birthplace'] = 'Lisboa';
+    $user['birthdate'] = '1988-12-18';
     $user = User::create($user);
+    $user->user_type()->attach(1);
+    return $user->load('user_type');
     
     
 });

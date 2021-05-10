@@ -51,13 +51,14 @@ class ActionRegistrationController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Models\Action  $action
+     * @param  ActionRegistration $registration
      * @return \Illuminate\Http\Response
      */
-    public function show(Action $action)
+    public function show(ActionRegistration $registration)
     {
         try {
-            return response()->json( [ 'action' => $action, 'success' => true ] );
+            $registration = $registration->with('authors', 'receptors' , 'action');
+            return response()->json( [ 'registration' => $registration, 'success' => true ] );
         } catch (Exception $e) {
             return response()->json( [ 'success' => false, 'error' => $e->getMessage()] );
         }
@@ -70,7 +71,7 @@ class ActionRegistrationController extends Controller
      * @param  \App\Models\Action  $action
      * @return \Illuminate\Http\Response
      */
-    public function update(ActionRequest $request, Action $action)
+    public function update(ActionRegistrationRequest $request, ActionRegistration $action)
     {
         try {
             $action = $this->actionRegistrationService->update($request, $action);
@@ -83,13 +84,13 @@ class ActionRegistrationController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Models\Action  $action
+     * @param  ActionRegistration  $registration
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Action $action)
+    public function destroy(ActionRegistration $registration)
     {
         try {
-            $this->actionRegistrationService->delete($action);
+            $this->actionRegistrationService->delete($registration);
             return response()->json([ 'success' => true ]);
         } catch (Exception $e) {
             return response()->json( [ 'success' => false, 'error' => $e->getMessage()] );

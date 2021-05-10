@@ -1,10 +1,9 @@
 <?php
 
-namespace App\Interfaces\UserType;
+namespace App\Interfaces;
 
 use App\Models\UserType;
-use App\Http\Requests\User\StoreUserRequest;
-use App\Http\Requests\UserType\UserTypeRequest;
+use App\Http\Requests\UserTypeRequest;
 
 interface iUserTypeService
 {

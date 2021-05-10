@@ -6,7 +6,7 @@ namespace App\Services;
 use App\Interfaces\iUserService;
 use App\User;
 use App\Http\Requests\StoreUserRequest;
-
+use Illuminate\Support\Facades\Hash;
 
 class UserService implements iUserService
 {
@@ -18,12 +18,13 @@ class UserService implements iUserService
     }
 
     function show(User $user) {
-        return $user;
+        return $user->load('user_type');
     }
 
     function store(StoreUserRequest $request) {
+        $request->password = Hash::make($request->password);
         $user = User::create($request->all());
-        return $user->with('user_type');
+        return $user->load('user_type');
     }
 
     function update(StoreUserRequest $request, User $user) {

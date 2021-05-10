@@ -15,9 +15,9 @@ class AddActionRegistrationIdToActionHasReceptorsTable extends Migration
     {
         Schema::table('action_has_receptors', function (Blueprint $table) {
             $table->unsignedBigInteger('action_registration_id')->after('id');
-            $table->foreign('action_registration_id')->references('id')->on('actions_registrations');
+            $table->foreign('action_registration_id')->references('id')->on('actions_registrations')->onDelete('cascade');
             $table->dropForeign('action_has_receptors_action_id_foreign');
-            $table->dropColumn('action_id');
+            $table->dropColumn('action_id'); 
         });
     }
 

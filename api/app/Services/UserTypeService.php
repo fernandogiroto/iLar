@@ -1,11 +1,11 @@
 <?php
 
 
-namespace App\Services\UserType;
+namespace App\Services;
 
-use App\Interfaces\UserType\iUserTypeService;
+use App\Interfaces\iUserTypeService;
 use App\Models\UserType;
-use App\Http\Requests\UserType\UserTypeRequest;
+use App\Http\Requests\UserTypeRequest;
 
 
 class UserTypeService implements iUserTypeService

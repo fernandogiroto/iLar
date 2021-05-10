@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\UserType\UserTypeRequest;
+use App\Http\Requests\UserTypeRequest;
 use App\Models\UserType;
-use App\Services\UserType\UserTypeService;
+use App\Services\UserTypeService;
 use Illuminate\Http\Request;
 use Exception;
 

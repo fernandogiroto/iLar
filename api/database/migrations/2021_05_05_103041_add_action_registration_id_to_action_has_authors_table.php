@@ -15,7 +15,7 @@ class AddActionRegistrationIdToActionHasAuthorsTable extends Migration
     {
         Schema::table('action_has_authors', function (Blueprint $table) {
             $table->unsignedBigInteger('action_registration_id')->after('id');
-            $table->foreign('action_registration_id')->references('id')->on('actions_registrations');
+            $table->foreign('action_registration_id')->references('id')->on('actions_registrations')->onDelete('cascade');
             $table->dropForeign('action_has_authors_action_id_foreign');
             $table->dropColumn('action_id');
         });
