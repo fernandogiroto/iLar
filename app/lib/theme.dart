@@ -11,6 +11,7 @@ Color bgColorWhite = Colors.white;
 Color itemListColor = Color(0xFFEEEEEE);
 Color subtitleGray = Color(0xB7B6B6);
 
+// COLOR SCHEME
 Color primaryColor = Color(0xFF028090);
 Color secondColor = Color(0xFF05668D);
 Color thirdColor = Color(0xFF00A896);
@@ -19,4 +20,3 @@ Color fifthColor = Color(0xFFF0F3BD);
 
 Color textWhiteColor = Color(0xFFFFFFFF);
 Color textBlackColor = Color(0xFF000000);
-

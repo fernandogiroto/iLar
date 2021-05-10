@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'commons/collapsing_navigation_drawer.dart';
-import 'screens/patient_screen.dart';
-import 'screens/service_screen.dart';
-import 'screens/settings_screen.dart';
+import 'views/patient_screen.dart';
+import 'views/service_screen.dart';
+import 'views/settings_screen.dart';
 
 void main() => runApp(MyApp());
 
