@@ -13,7 +13,7 @@ class ExtraHourRequest extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,10 @@ class ExtraHourRequest extends FormRequest
     public function rules()
     {
         return [
-            //
+            'user_id'           => 'required| integer',
+            'date'              => 'required',
+            'hours_quantity'    => 'required',
+            'created_by'        => 'required | integer'
         ];
     }
 }

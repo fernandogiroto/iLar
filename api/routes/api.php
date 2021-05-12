@@ -25,6 +25,7 @@ Route::apiResource('lares','LarController');
 Route::apiResource('actions','ActionController');
 Route::apiResource('registrations','ActionRegistrationController');
 Route::apiResource('extrahours','ExtraHoursController');
+Route::get('extrahours/{user}/{month?}','ExtraHoursController@getExtraHourByUser');
 
 Route::group([
 
