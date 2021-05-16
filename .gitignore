@@ -89,11 +89,6 @@ lint/tmp/
 api/vendor/
 .vscode/launch.json
 api/.env
-api/vendor/
 app/.dart_tool/flutter_build/
-app/.idea/modules.xml
-app/.idea/workspace.xml
-app/.idea/libraries/Dart_Packages.xml
-app/.idea/libraries/Dart_SDK.xml
-app/.idea/libraries/Flutter_Plugins.xml
+app/.idea/
 app/android/gradle.properties
