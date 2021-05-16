@@ -3,23 +3,34 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class AuthController extends Controller
 {
     public function __construct()
     {
-        $this->middleware('auth:api', ['except' => ['login']]);
+       // $this->middleware('auth.basic');
     }
 
-    public function login()
+    public function login(Request $request)
     {
-        $credencials = request(['email', 'password']);
+        $credencials = $request->validate([
+            'email' => 'required|string',
+            'password' => 'required|string'
+        ]);
 
-        if (!$token = auth()->attempt($credencials)) {
-            return response()->json(['error' => 'Unautorized'], 401);
+        if (!Auth::attempt($credencials)) {
+            return response()->json(['error' => 'Unautorized login credencials'], 401);
         }
 
-        return $this->respondWithToken($token);
+        //dd(Auth::user()->name);
+
+        $token = Auth::user()->createToken('authToken')->accessToken;
+
+        return response()->json([
+            'user' => Auth::user(),
+            'token' => $token
+        ]);
     }
 
     /**

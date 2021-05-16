@@ -7,6 +7,7 @@ use App\Interfaces\iActionRegistration;
 use App\Models\Action;
 use App\Models\ActionRegistration;
 use App\User;
+use Illuminate\Support\Facades\Auth;
 
 class ActionRegistrationService implements iActionRegistration
 {
@@ -22,9 +23,11 @@ class ActionRegistrationService implements iActionRegistration
     
     function store(ActionRegistrationRequest $request) {
 
+        dd(Auth::user()->user_type);
         $action = Action::find($request->action_id);
         $authors_ids = json_decode($request->authors_ids);
         $receptors_ids = json_decode($request->receptors_ids);
+        
 
         $registration = ActionRegistration::create( [
             'action_id'     => $action->id,

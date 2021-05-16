@@ -14,18 +14,14 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
+/* Route::middleware('auth:api')->get('/user', function (Request $request) {
     //dd($request);
     return $request->user();
-});
+}); */
 
-Route::apiResource('users','UserController');
-Route::apiResource('usertypes','UserTypeController');
-Route::apiResource('lares','LarController');
-Route::apiResource('actions','ActionController');
-Route::apiResource('registrations','ActionRegistrationController');
-Route::apiResource('extrahours','ExtraHoursController');
-Route::get('extrahours/{user}/{month?}','ExtraHoursController@getExtraHourByUser');
+
+
+
 
 Route::group([
 
@@ -39,4 +35,14 @@ Route::group([
     Route::post('refresh', 'AuthController@refresh');
     Route::post('me', 'AuthController@me');
 
+});
+
+Route::group(['middleware' => 'auth:api'], function ($router) {
+    Route::apiResource('lares','LarController')->middleware('auth:api');
+    Route::apiResource('users','UserController');
+    Route::apiResource('usertypes','UserTypeController');
+    Route::apiResource('actions','ActionController');
+    Route::apiResource('registrations','ActionRegistrationController');
+    Route::apiResource('extrahours','ExtraHoursController');
+    Route::get('extrahours/{user}/{month?}','ExtraHoursController@getExtraHourByUser');
 });

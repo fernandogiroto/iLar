@@ -33,7 +33,12 @@ class UserController extends Controller
     }
 
     public function show(User $user) {
-        return response()->json([ 'user' => $user]);
+        try {
+            $user = $this->userService->show($user);
+            return response()->json([ 'user' => $user, 'success' => true]);
+        } catch (Exception $e) {
+            return response()->json( [ 'success' => false, 'error' => $e->getMessage()] );
+        }
     }
 
     public function update(StoreUserRequest $request, User $user) {
