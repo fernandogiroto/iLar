@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:app/commons/collapsing_navigation_drawer.dart';
 import 'package:app/commons/custom_app_bar.dart';
-import 'package:app/theme.dart';
+import 'package:app/theme/theme.dart';
 import 'package:app/commons/custom_bottom_bar.dart';
 
 class SettingsScreen extends StatefulWidget {

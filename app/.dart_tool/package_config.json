@@ -167,10 +167,10 @@
       "name": "app",
       "rootUri": "../",
       "packageUri": "lib/",
-      "languageVersion": "2.1"
+      "languageVersion": "2.6"
     }
   ],
-  "generated": "2021-05-09T16:56:20.049993Z",
+  "generated": "2021-06-03T19:41:31.402956Z",
   "generator": "pub",
   "generatorVersion": "2.12.1"
 }

@@ -1,4 +1,4 @@
-import 'package:app/theme.dart';
+import 'package:app/theme/theme.dart';
 import 'package:flutter/material.dart';
 import 'package:app/widgets/patient_info.dart';
 

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:ff_navigation_bar/ff_navigation_bar.dart';
-import 'package:app/theme.dart';
+import 'package:app/theme/theme.dart';
 
 class CustomBottomBar extends StatefulWidget {
   final int index;
@@ -29,9 +29,9 @@ class _CustomBottomBarMenuState extends State<CustomBottomBar> {
         setState(() {
           selectedIndex = index;
           if (selectedIndex == 1)
-            Navigator.pushNamed(context, 'patients');
+            Navigator.pushNamed(context, '/patients');
           else if (selectedIndex == 2)
-            Navigator.pushNamed(context, 'homescreen');
+            Navigator.pushNamed(context, '/homepage');
         });
       },
       items: [
@@ -45,7 +45,7 @@ class _CustomBottomBarMenuState extends State<CustomBottomBar> {
         ),
         FFNavigationBarItem(
           iconData: Icons.add_circle,
-          label: 'Adicionar',
+          label: 'Registar',
         ),
         FFNavigationBarItem(
           iconData: Icons.description,
