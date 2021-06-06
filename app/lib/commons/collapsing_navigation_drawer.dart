@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:app/models/navigation_model.dart';
-import 'package:app/theme.dart';
+import 'package:app/theme/theme.dart';
 import 'collapsing_list_title.dart';
 
 class CollapsingNavigationDrawer extends StatefulWidget {
