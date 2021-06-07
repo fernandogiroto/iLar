@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:app/commons/custom_bottom_bar.dart';
 import 'icon_tile.dart';
-import 'package:app/theme.dart';
+import 'package:app/theme/theme.dart';
 
 class PatientInfo extends StatefulWidget {
   @override

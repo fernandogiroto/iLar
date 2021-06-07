@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:app/theme.dart';
+import 'package:app/theme/theme.dart';
 
 class ListItems extends StatefulWidget {
   final String title;

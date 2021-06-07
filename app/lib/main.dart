@@ -3,6 +3,7 @@ import 'commons/collapsing_navigation_drawer.dart';
 import 'views/patient_screen.dart';
 import 'views/service_screen.dart';
 import 'views/settings_screen.dart';
+import 'package:app/config/route.dart';
 
 void main() => runApp(MyApp());
 
@@ -10,13 +11,10 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
+      routes: Routes.getRoute(),
+      onGenerateRoute: (settings) => Routes.onGenerateRoute(settings),
       debugShowCheckedModeBanner: false,
-      home: MyHomePage(),
-      routes: {
-        'homescreen': (context) => ServiceScreen(),
-        'patients': (context) => PatientsScreen(),
-        'settings': (context) => SettingsScreen()
-      },
+      initialRoute: "SplashPage",
     );
   }
 }
