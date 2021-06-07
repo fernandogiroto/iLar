@@ -71,11 +71,13 @@ class ActionRegistrationController extends Controller
      * @param  \App\Models\Action  $action
      * @return \Illuminate\Http\Response
      */
-    public function update(ActionRegistrationRequest $request, ActionRegistration $action)
+    public function update(ActionRegistrationRequest $request, int $registration_id)
     {
+
+        $registration = ActionRegistration::findOrFail($registration_id);
         try {
-            $action = $this->actionRegistrationService->update($request, $action);
-            return response()->json( [ 'action' => $action, 'success' => true ] );
+            $registration = $this->actionRegistrationService->update($request, $registration);
+            return response()->json( [ 'registration' => $registration, 'success' => true ] );
         } catch (Exception $e) {
             return response()->json( [ 'success' => false, 'error' => $e->getMessage()] );
         }

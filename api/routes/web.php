@@ -26,9 +26,9 @@ Route::get('/', function () {
 
    $user_type = UserType::find(3);
 
-   $user->user_type()->save($user_type);
+   //$user->user_type()->save($user_type);
 
-dd($user->load('user_type'));
+//dd($user->load('user_type'));
 
     //$clinic->specialities()->save($speciality);
 

@@ -12,7 +12,6 @@ class Action extends Model
 
     protected $fillable = ['name', 'is_active'];
 
-    
 
     public function registrations() {
         return $this->hasMany(ActionRegistration::class);

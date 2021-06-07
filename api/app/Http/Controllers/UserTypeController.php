@@ -17,8 +17,8 @@ class UserTypeController extends Controller
 
     public function index() {
         try {
-            $user_types = $this->userTypeService->getAll();
-            return response()->json( [ 'user_types' => $user_types, 'success' => true ] );
+            $usertypes = $this->userTypeService->getAll();
+            return response()->json( [ 'usertypes' => $usertypes, 'success' => true ] );
         } catch (Exception $e) {
             return response()->json( [ 'success' => false, 'error' => $e->getMessage()] );
         }
@@ -26,29 +26,30 @@ class UserTypeController extends Controller
 
     public function store(UserTypeRequest $request) {
         try {
-            $user_type = $this->userTypeService->store($request);
-            return response()->json([ 'user_type' => $user_type, 'success' => true]);
+            $usertype = $this->userTypeService->store($request);
+            return response()->json([ 'usertype' => $usertype, 'success' => true]);
         } catch (Exception $e) {
             return response()->json( [ 'success' => false, 'error' => $e->getMessage()] );
         }
     }
 
-    public function show(UserType $user_type) {
-        return response()->json([ 'user_type' => $user_type]);
+    public function show(UserType $usertype) {
+        return response()->json([ 'usertype' => $usertype]);
     }
 
-    public function update(UserTypeRequest $request, UserType $user_type) {
+    public function update(UserTypeRequest $request, UserType $usertype) {
+      
         try {
-            $user_type = $this->userTypeService->update($request, $user_type);
-            return response()->json([ 'user_type' => $user_type, 'success' => true]);
+            $usertype = $this->userTypeService->update($request, $usertype);
+            return response()->json([ 'usertype' => $usertype, 'success' => true]);
         } catch (Exception $e) {
             return response()->json( [ 'success' => false, 'error' => $e->getMessage()] );
         }
     }
 
-    public function destroy(UserType $user_type){
+    public function destroy(UserType $usertype){
         try {
-            $this->userTypeService->delete($user_type);
+            $this->userTypeService->delete($usertype);
             return response()->json(['success' => true]);
         } catch (Exception $e) {
             return response()->json( ['success' => false, 'error' => $e->getMessage()] );

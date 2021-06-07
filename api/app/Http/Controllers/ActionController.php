@@ -2,9 +2,9 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\Action\ActionRequest;
+use App\Http\Requests\ActionRequest;
 use App\Models\Action;
-use App\Services\Action\ActionService;
+use App\Services\ActionService;
 use Illuminate\Http\Request;
 use Exception;
 

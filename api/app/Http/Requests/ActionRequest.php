@@ -1,6 +1,6 @@
 <?php
 
-namespace App\Http\Requests\Action;
+namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
 
@@ -24,7 +24,7 @@ class ActionRequest extends FormRequest
     public function rules()
     {
         return [
-            'name'      => 'required|max:255',
+
         ];
     }
 }

@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Services\Action;
+namespace App\Services;
 
-use App\Http\Requests\Action\ActionRequest;
-use App\Interfaces\Action\iActionService;
+use App\Http\Requests\ActionRequest;
+use App\Interfaces\iActionService;
 use App\Models\Action;
 
 class ActionService implements iActionService
@@ -14,7 +14,7 @@ class ActionService implements iActionService
     
     function getAll()
     {
-        $actions = Action::with('authors', 'receptors', 'registrations')->get();
+        $actions = Action::with('registrations')->get();
         return $actions;
     }
     

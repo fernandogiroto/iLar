@@ -9,7 +9,7 @@ class ActionRegistration extends Model
 {
     public $table = 'actions_registrations';
 
-    protected $fillable = ['action_id', 'extraData','scheduled_to', 'executed', 'executed_at', 'notes'];
+    protected $fillable = ['action_id', 'extraData','scheduled_to', 'executed', 'executed_at', 'notes', 'created_by'];
 
 
     public function action() {

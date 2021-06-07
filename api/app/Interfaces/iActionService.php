@@ -1,9 +1,9 @@
 <?php
 
-namespace App\Interfaces\Action;
+namespace App\Interfaces;
 
 
-use App\Http\Requests\Action\ActionRequest;
+use App\Http\Requests\ActionRequest;
 use App\Models\Action;
 
 interface iActionService

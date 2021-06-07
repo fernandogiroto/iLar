@@ -28,7 +28,7 @@ class UserService implements iUserService
     }
 
     function update(StoreUserRequest $request, User $user) {
-        $user = $user->update($request->all());
+        $user->update($request->all());
         return $user;
         
     }

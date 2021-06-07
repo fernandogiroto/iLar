@@ -23,7 +23,6 @@ class ActionRegistrationService implements iActionRegistration
     
     function store(ActionRegistrationRequest $request) {
 
-        dd(Auth::user()->user_type);
         $action = Action::find($request->action_id);
         $authors_ids = json_decode($request->authors_ids);
         $receptors_ids = json_decode($request->receptors_ids);
@@ -35,7 +34,8 @@ class ActionRegistrationService implements iActionRegistration
             'scheduled_to'  => $request->scheduled_to,
             'executed'      => $request->executed ? $request->executed : 1,
             'executed_at'   => $request->executed_at ? $request->executed_at : null,
-            'notes'         => $request->notes ? $request->notes : null
+            'notes'         => $request->notes ? $request->notes : null,
+            'created_by'    => Auth::user()->id
         ]);
 
         $registration->authors()->sync($authors_ids);
@@ -44,9 +44,14 @@ class ActionRegistrationService implements iActionRegistration
         return $registration->load('action', 'authors', 'receptors');
     }
     
-    function update(ActionRegistrationRequest $request, ActionRegistration $actionRegistration) {
-        $actionRegistration->update( $request->all() );
-        return $actionRegistration;
+    function update(ActionRegistrationRequest $request, ActionRegistration $action_registration) {
+        $action_registration->update( [
+            'action_id' => $request->action_id,
+        ]);
+
+        $action_registration->authors()->sync($request->authors_ids);
+        $action_registration->receptors()->sync($request->authors_ids);
+        return $action_registration->load('action', 'authors', 'receptors');
     }
     
     function delete(ActionRegistration $actionRegistration) {

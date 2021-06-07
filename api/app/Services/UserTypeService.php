@@ -28,12 +28,12 @@ class UserTypeService implements iUserTypeService
 
     function update(UserTypeRequest $request, UserType $user_type) {
         $user_type->update($request->all());
-        return $$user_type;
+        return $user_type;
         
     }
 
-    function delete( UserType $user_type) {
-        $user_type->delete();
+    function delete( UserType $usertype) {
+        $usertype->delete();
         return true;
     }
 }

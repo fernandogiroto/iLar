@@ -38,7 +38,7 @@ Route::group([
 });
 
 Route::group(['middleware' => 'auth:api'], function ($router) {
-    Route::apiResource('lares','LarController')->middleware('auth:api');
+    Route::apiResource('lares','LarController');
     Route::apiResource('users','UserController');
     Route::apiResource('usertypes','UserTypeController');
     Route::apiResource('actions','ActionController');
