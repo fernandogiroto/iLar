@@ -1,5 +1,7 @@
+import 'dart:convert';
 import 'dart:math';
 
+import 'package:app/widgets/persons_list.dart';
 import 'package:flutter/material.dart';
 import 'package:app/models/patient_model.dart';
 import 'package:app/models/data.dart';
@@ -10,6 +12,7 @@ import 'package:app/theme/theme.dart';
 import 'package:app/commons/custom_bottom_bar.dart';
 import 'package:app/commons/custom_app_bar.dart';
 import 'package:app/commons/collapsing_navigation_drawer.dart';
+import 'package:http/http.dart' as http;
 
 class PatientsScreen extends StatefulWidget {
   @override
@@ -17,12 +20,41 @@ class PatientsScreen extends StatefulWidget {
 }
 
 class _PatientsScreenState extends State<PatientsScreen> {
-  List<PatientModel> patientDataList;
+  List<PatientModel> patients = [];
+
+  Future<List<PatientModel>> getPatients() async {
+    print('entrei');
+    String uri = "https://10.0.2.2:8000/api/users";
+
+    var response = await http.get(
+        Uri.parse(uri),
+      /*  headers: {
+          "Authorization": "563492ad6f9170000100000111ab6fee1d2648089a66e0592897e6f1"
+        }*/
+    );
+
+    print(response);
+
+    if (response.statusCode == 200) {
+
+      this.setState(() {
+        var list = jsonDecode(response.body);
+
+        print(list);
+      });
+    } else {
+      throw Exception('Failed to load album: ' + response.body);
+    }
+  }
+
   @override
   void initState() {
-    patientDataList =
-        doctorMapList.map((x) => PatientModel.fromJson(x)).toList();
     super.initState();
+    print('init');
+    this.getPatients();
+    print('FIM');
+    print(patients);
+
   }
 
   Widget _searchField() {
@@ -61,6 +93,18 @@ class _PatientsScreenState extends State<PatientsScreen> {
     return SliverList(
       delegate: SliverChildListDelegate(
         [
+          Column(
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                Container(
+                  width: double.infinity,
+                  padding: EdgeInsets.symmetric(horizontal: 5),
+                  child: ElevatedButton.icon(onPressed: (){
+                    print('adicionar');
+                  }, icon: Icon(Icons.add), label: Text('ADICIONAR'),
+                  style: ButtonStyle()),
+                ),
+         ] ),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
@@ -76,20 +120,40 @@ class _PatientsScreenState extends State<PatientsScreen> {
                       borderRadius: BorderRadius.all(Radius.circular(20))),
             ],
           ).hP16,
-          getdoctorWidgetList()
+          new Container(
+              constraints: BoxConstraints(
+                  minWidth: double.infinity, maxHeight: 400),
+            child:  (patients.length > 0 )
+            ? new ListView.builder(
+                  itemBuilder: (ctx, i){
+                    return PatientTile(patients[i]);
+                  },
+                  itemCount: patients.length)
+            : new Card(color: Colors.red.shade50,
+
+                child: Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text('Não existem registos.', textAlign: TextAlign.center),
+                ))
+          )
         ],
       ),
     );
   }
 
-  Widget getdoctorWidgetList() {
-    return Column(
-        children: patientDataList.map((x) {
-      return _doctorTile(x);
-    }).toList());
+  Widget PatientsList() {
+    List<PatientModel> patients = [];
+
+   return Expanded(
+     child: Container(
+       child: ListView.builder(itemBuilder: (ctx, i){
+         print(patients[i]);
+       }, itemCount: patients.length),
+     ),
+   );
   }
 
-  Widget _doctorTile(PatientModel model) {
+  Widget PatientTile(PatientModel model) {
     return Container(
       margin: EdgeInsets.symmetric(vertical: 8, horizontal: 16),
       decoration: BoxDecoration(

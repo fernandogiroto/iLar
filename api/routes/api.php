@@ -36,10 +36,10 @@ Route::group([
     Route::post('me', 'AuthController@me');
 
 });
-
+Route::apiResource('users','UserController');
 Route::group(['middleware' => 'auth:api'], function ($router) {
     Route::apiResource('lares','LarController');
-    Route::apiResource('users','UserController');
+ 
     Route::apiResource('usertypes','UserTypeController');
     Route::apiResource('actions','ActionController');
     Route::apiResource('registrations','ActionRegistrationController');

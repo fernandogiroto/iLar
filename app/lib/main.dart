@@ -1,11 +1,22 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'commons/collapsing_navigation_drawer.dart';
-import 'views/patient_screen.dart';
 import 'views/service_screen.dart';
-import 'views/settings_screen.dart';
 import 'package:app/config/route.dart';
 
-void main() => runApp(MyApp());
+void main(){
+  HttpOverrides.global = new MyHttpOverrides();
+  runApp(MyApp());
+}
+
+class MyHttpOverrides extends HttpOverrides{
+  @override
+  HttpClient createHttpClient(SecurityContext context){
+    return super.createHttpClient(context)
+      ..badCertificateCallback = (X509Certificate cert, String host, int port)=> true;
+  }
+}
 
 class MyApp extends StatelessWidget {
   @override
