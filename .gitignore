@@ -92,3 +92,4 @@ api/.env
 app/.dart_tool/flutter_build/
 app/.idea/
 app/android/gradle.properties
+api/vendor/

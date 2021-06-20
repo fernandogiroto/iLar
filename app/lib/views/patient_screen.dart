@@ -24,19 +24,19 @@ class _PatientsScreenState extends State<PatientsScreen> {
 
   Future<List<PatientModel>> getPatients() async {
     print('entrei');
-    String uri = "https://10.0.2.2:8000/api/users";
 
-    var response = await http.get(
-        Uri.parse(uri),
-      /*  headers: {
-          "Authorization": "563492ad6f9170000100000111ab6fee1d2648089a66e0592897e6f1"
-        }*/
-    );
+    http.Response response = await http.get(
+        Uri.parse(Uri.encodeFull("http://127.0.0.1:8000")),
+        headers: <String, String>{
+          'Content-Type': 'application/json; charset=UTF-8',
+          'Accept': "*/*",
+          'connection': 'keep-alive',
+          'Accept-Encoding': 'gzip, deflate, br',
+        });
 
     print(response);
 
     if (response.statusCode == 200) {
-
       this.setState(() {
         var list = jsonDecode(response.body);
 
@@ -54,7 +54,6 @@ class _PatientsScreenState extends State<PatientsScreen> {
     this.getPatients();
     print('FIM');
     print(patients);
-
   }
 
   Widget _searchField() {
@@ -93,18 +92,19 @@ class _PatientsScreenState extends State<PatientsScreen> {
     return SliverList(
       delegate: SliverChildListDelegate(
         [
-          Column(
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                Container(
-                  width: double.infinity,
-                  padding: EdgeInsets.symmetric(horizontal: 5),
-                  child: ElevatedButton.icon(onPressed: (){
+          Column(mainAxisSize: MainAxisSize.min, children: [
+            Container(
+              width: double.infinity,
+              padding: EdgeInsets.symmetric(horizontal: 5),
+              child: ElevatedButton.icon(
+                  onPressed: () {
                     print('adicionar');
-                  }, icon: Icon(Icons.add), label: Text('ADICIONAR'),
+                  },
+                  icon: Icon(Icons.add),
+                  label: Text('ADICIONAR'),
                   style: ButtonStyle()),
-                ),
-         ] ),
+            ),
+          ]),
           Row(
             mainAxisAlignment: MainAxisAlignment.spaceBetween,
             children: <Widget>[
@@ -121,21 +121,21 @@ class _PatientsScreenState extends State<PatientsScreen> {
             ],
           ).hP16,
           new Container(
-              constraints: BoxConstraints(
-                  minWidth: double.infinity, maxHeight: 400),
-            child:  (patients.length > 0 )
-            ? new ListView.builder(
-                  itemBuilder: (ctx, i){
-                    return PatientTile(patients[i]);
-                  },
-                  itemCount: patients.length)
-            : new Card(color: Colors.red.shade50,
-
-                child: Padding(
-                  padding: const EdgeInsets.all(8.0),
-                  child: Text('Não existem registos.', textAlign: TextAlign.center),
-                ))
-          )
+              constraints:
+                  BoxConstraints(minWidth: double.infinity, maxHeight: 400),
+              child: (patients.length > 0)
+                  ? new ListView.builder(
+                      itemBuilder: (ctx, i) {
+                        return PatientTile(patients[i]);
+                      },
+                      itemCount: patients.length)
+                  : new Card(
+                      color: Colors.red.shade50,
+                      child: Padding(
+                        padding: const EdgeInsets.all(8.0),
+                        child: Text('Não existem registos.',
+                            textAlign: TextAlign.center),
+                      )))
         ],
       ),
     );
@@ -144,13 +144,15 @@ class _PatientsScreenState extends State<PatientsScreen> {
   Widget PatientsList() {
     List<PatientModel> patients = [];
 
-   return Expanded(
-     child: Container(
-       child: ListView.builder(itemBuilder: (ctx, i){
-         print(patients[i]);
-       }, itemCount: patients.length),
-     ),
-   );
+    return Expanded(
+      child: Container(
+        child: ListView.builder(
+            itemBuilder: (ctx, i) {
+              print(patients[i]);
+            },
+            itemCount: patients.length),
+      ),
+    );
   }
 
   Widget PatientTile(PatientModel model) {
