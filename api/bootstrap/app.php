@@ -52,4 +52,7 @@ $app->singleton(
 |
 */
 
+$app->register(Tymon\JWTAuth\Providers\LaravelServiceProvider::class);
+
+
 return $app;

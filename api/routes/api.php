@@ -14,18 +14,42 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-/* Route::middleware('auth:api')->get('/user', function (Request $request) {
-    //dd($request);
+/* Route::middleware(['cors', 'json.response', 'auth:api'])->get('/user', function (Request $request) {
     return $request->user();
+});
+
+
+Route::group(['middleware' => ['cors', 'json.response']], function () {
+
+    // ...
+
+    // public routes
+    Route::post('/login', 'Auth\ApiAuthController@login')->name('login.api');
+    Route::post('/register', 'Auth\ApiAuthController@register')->name('register.api');
+
+    // ...
+
 }); */
 
 
 
 
 
-Route::group([
+/*
+Route::group(['middleware' => ['cors']], function () {
+    Route::apiResource('patients','PatientController');
+    Route::apiResource('users','UserController');
 
-    'middleware' => 'api',
+    // public routes
+    Route::post('/login', 'Auth\ApiAuthController@login')->name('login.api');
+    Route::post('/register','Auth\ApiAuthController@register')->name('register.api');
+    Route::post('/logout', 'Auth\ApiAuthController@logout')->name('logout.api');
+
+});
+*/
+ Route::group([
+
+    'middleware' => ['api', 'cors'],
     'prefix' => 'auth'
 
 ], function ($router) {
@@ -36,10 +60,13 @@ Route::group([
     Route::post('me', 'AuthController@me');
 
 });
-Route::apiResource('users','UserController');
-Route::group(['middleware' => 'auth:api'], function ($router) {
+
+
+//Route::group(['middleware' => ['auth.jwt', 'cors']], function ($router) {
+Route::group(['middleware' => ['cors']], function ($router) {    
     Route::apiResource('lares','LarController');
- 
+    Route::apiResource('users','UserController');
+    Route::apiResource('patients','PatientController');
     Route::apiResource('usertypes','UserTypeController');
     Route::apiResource('actions','ActionController');
     Route::apiResource('registrations','ActionRegistrationController');

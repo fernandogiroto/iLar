@@ -24,6 +24,8 @@ class UserService implements iUserService
     function store(StoreUserRequest $request) {
         $request->password = Hash::make($request->password);
         $user = User::create($request->all());
+        $token = $user->createToken('auth_token')->plainTextToken;
+
         return $user->load('user_type');
     }
 
