@@ -1,3 +1,4 @@
+import 'package:app/views/patients_create_page.dart';
 import 'package:flutter/material.dart';
 import 'package:app/views/detail_page.dart';
 import 'package:app/views/home_page.dart';
@@ -11,6 +12,7 @@ class Routes {
       '/': (_) => SplashPage(),
       '/homepage': (_) => HomePage(),
       '/patients': (_) => PatientsScreen(),
+      '/utente/criar': (_) => PatientsCreatePage(),
     };
   }
 

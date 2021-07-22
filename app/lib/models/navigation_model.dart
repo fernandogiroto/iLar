@@ -9,7 +9,8 @@ class NavigationModel {
 
 List<NavigationModel> navigationItems = [
   NavigationModel(title: "Serviços", icon: Icons.add, cmp: "/homepage"),
-  NavigationModel(
-      title: "Utentes", icon: Icons.supervised_user_circle, cmp: "/patients"),
+  NavigationModel(title: "Utentes", icon: Icons.supervised_user_circle, cmp: "/patients"),
   NavigationModel(title: "Opções", icon: Icons.settings, cmp: "settings"),
+    NavigationModel(title: "Criar Utente", icon: Icons.supervised_user_circle, cmp: "/utente/criar"),
+
 ];
