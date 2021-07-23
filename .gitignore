@@ -96,12 +96,11 @@ app/pubspec.lock
 app/.dart_tool/
 api/storage/oauth-private.key
 api/storage/oauth-public.key
-app/lib/
 api/.rnd
-app
 vendor/
 api/vendor/
 app/.dart_tool/
 app/.packages
 .vscode/
 composer.lock
+app/.dart_tool/package_config.json
